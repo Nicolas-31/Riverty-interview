@@ -1,0 +1,14 @@
+C:\Users\nicol\OneDrive\Desktop\Riverty interview\1b\1b\bin\Debug\net7.0\1b.exe
+C:\Users\nicol\OneDrive\Desktop\Riverty interview\1b\1b\bin\Debug\net7.0\1b.deps.json
+C:\Users\nicol\OneDrive\Desktop\Riverty interview\1b\1b\bin\Debug\net7.0\1b.runtimeconfig.json
+C:\Users\nicol\OneDrive\Desktop\Riverty interview\1b\1b\bin\Debug\net7.0\1b.dll
+C:\Users\nicol\OneDrive\Desktop\Riverty interview\1b\1b\bin\Debug\net7.0\1b.pdb
+C:\Users\nicol\OneDrive\Desktop\Riverty interview\1b\1b\obj\Debug\net7.0\1b.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicol\OneDrive\Desktop\Riverty interview\1b\1b\obj\Debug\net7.0\1b.AssemblyInfoInputs.cache
+C:\Users\nicol\OneDrive\Desktop\Riverty interview\1b\1b\obj\Debug\net7.0\1b.AssemblyInfo.cs
+C:\Users\nicol\OneDrive\Desktop\Riverty interview\1b\1b\obj\Debug\net7.0\1b.csproj.CoreCompileInputs.cache
+C:\Users\nicol\OneDrive\Desktop\Riverty interview\1b\1b\obj\Debug\net7.0\1b.dll
+C:\Users\nicol\OneDrive\Desktop\Riverty interview\1b\1b\obj\Debug\net7.0\refint\1b.dll
+C:\Users\nicol\OneDrive\Desktop\Riverty interview\1b\1b\obj\Debug\net7.0\1b.pdb
+C:\Users\nicol\OneDrive\Desktop\Riverty interview\1b\1b\obj\Debug\net7.0\1b.genruntimeconfig.cache
+C:\Users\nicol\OneDrive\Desktop\Riverty interview\1b\1b\obj\Debug\net7.0\ref\1b.dll
