@@ -11,7 +11,7 @@ using System.Text.Json;
 
 internal class Progam
 {
-    private const string ApiKey = "abd0a86748e44f2095d949529393812a";
+    private const string ApiKey = "Your Api key"; // Get your api key from https://fixer.io/
     private static readonly HttpClient _httpClient = new HttpClient();
     static async Task Main(string[] args)
     {

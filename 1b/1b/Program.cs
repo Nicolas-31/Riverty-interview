@@ -11,7 +11,7 @@ namespace _1b
 {
     internal class Program
     {
-        private const string ApiKey = "abd0a86748e44f2095d949529393812a";
+        private const string ApiKey = "Your Api key";
         private static readonly HttpClient _httpClient = new HttpClient();
         static async Task Main(string[] args)
         {
