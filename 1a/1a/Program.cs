@@ -31,6 +31,8 @@ internal class Progam
         }
         decimal convertedAmount = await ConvertCurrency(fromCurrency, toCurrency, amount);
         Console.WriteLine($"{amount.ToString(CultureInfo.InvariantCulture)} {fromCurrency} is {convertedAmount.ToString(CultureInfo.InvariantCulture)} {toCurrency}");
+        Console.WriteLine("Press any key to exit");
+        Console.ReadKey();
     }
 
     private static async Task<decimal> ConvertCurrency(string fromCurrency, string toCurrency, decimal amount)

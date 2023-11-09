@@ -38,6 +38,8 @@ namespace _1b
             decimal convertedAmount = await ConvertCurrency(fromCurrency, toCurrency, amount, date, useHistoricalData);
             string dateString = useHistoricalData ? date.ToString("dd.MM.yyyy") : "today's";
             Console.WriteLine($"{amount.ToString(CultureInfo.InvariantCulture)} {fromCurrency} on {dateString} is {convertedAmount.ToString(CultureInfo.InvariantCulture)} {toCurrency}");
+            Console.WriteLine("Press any key to exit");
+            Console.ReadKey();
         }
 
         private static async Task<decimal> ConvertCurrency(string fromCurrency, string toCurrency, decimal amount, DateTime date, bool useHistoricalData)
