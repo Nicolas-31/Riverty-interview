@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>2a</name>
+    </assembly>
+    <members>
+        <member name="M:_2a.Controllers.CurrencyConverterController.ConvertCurrency(_2a.Models.ConversionRequest)">
+            <summary>
+            Converts an amount from one currency to another using current or historical exchange rates.
+            </summary>
+            <param name="request">A <see cref="T:_2a.Models.ConversionRequest"/> object containing the details of the conversion: 
+            from currency, to currency, the amount to convert, and an optional date for historical rates.</param>
+            <returns>
+            An ActionResult of type <see cref="!:ConversionResponse"/> that contains the converted amount if the conversion is successful;
+            otherwise, returns a BadRequest with the error message.
+            </returns>
+            <remarks>
+            This endpoint receives a POST request with the conversion details. 
+            It performs an asynchronous operation to convert the specified amount from the source to the target currency.
+            If the conversion is successful, a <see cref="!:ConversionResponse"/> is returned with the result.
+            In case of an error, such as an invalid currency code or an exception in the conversion process,
+            a BadRequest is returned along with the error details.
+            </remarks>
+        </member>
+    </members>
+</doc>
