@@ -16,21 +16,36 @@ namespace _2a.Controllers
         }
 
         /// <summary>
+        /// Retrieves the latest exchange rates from fixer.io.
+        /// </summary>
+
+        [HttpGet()]
+        public async Task<ActionResult> GetAllExchangeRates()
+        {
+            try
+            {
+                string url = $"http://data.fixer.io/api/latest?access_key={ApiKey}";
+                HttpResponseMessage response = await _httpClient.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+
+                var ratesData = JsonSerializer.Deserialize<dynamic>(responseBody);
+                return Ok(ratesData);
+            }
+            catch (HttpRequestException ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while connecting to the exchange rates service.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while processing the exchange rates.");
+            }
+        }
+
+
+        /// <summary>
         /// Converts an amount from one currency to another using current or historical exchange rates.
         /// </summary>
-        /// <param name="request">A <see cref="ConversionRequest"/> object containing the details of the conversion: 
-        /// from currency, to currency, the amount to convert, and an optional date for historical rates.</param>
-        /// <returns>
-        /// An ActionResult of type <see cref="ConversionResponse"/> that contains the converted amount if the conversion is successful;
-        /// otherwise, returns a BadRequest with the error message.
-        /// </returns>
-        /// <remarks>
-        /// This endpoint receives a POST request with the conversion details. 
-        /// It performs an asynchronous operation to convert the specified amount from the source to the target currency.
-        /// If the conversion is successful, a <see cref="ConversionResponse"/> is returned with the result.
-        /// In case of an error, such as an invalid currency code or an exception in the conversion process,
-        /// a BadRequest is returned along with the error details.
-        /// </remarks>
         [HttpPost("convert")]
         public async Task<ActionResult<ConversionResposne>> ConvertCurrency([FromBody] ConversionRequest request)
         {
@@ -40,7 +55,7 @@ namespace _2a.Controllers
                 return new ConversionResposne { ConvertedAmount = convertedAmount };
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -48,7 +63,7 @@ namespace _2a.Controllers
 
         private async Task<decimal> ConvertCurrency(string fromCurrency, string toCurrency, decimal amount, DateTime? date)
         {
-            string url = date.HasValue 
+            string url = date.HasValue
                   ? $"http://data.fixer.io/api/{date:yyyy-MM-dd}?access_key={ApiKey}&symbols={fromCurrency},{toCurrency}"
                 : $"http://data.fixer.io/api/latest?access_key={ApiKey}&symbols={fromCurrency},{toCurrency}";
             HttpResponseMessage response = await _httpClient.GetAsync(url);
