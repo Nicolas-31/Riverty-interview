@@ -12,7 +12,7 @@ using _1c.Data;
 namespace _1c.Migrations
 {
     [DbContext(typeof(ExchangeRateContext))]
-    [Migration("20231110131133_InitialCreate")]
+    [Migration("20231110152903_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
