@@ -4,7 +4,7 @@
         <name>2a</name>
     </assembly>
     <members>
-        <member name="M:_2a.Controllers.CurrencyConverterController.GetAllExchangeRates">
+        <member name="M:_2a.Controllers.CurrencyConverterController.GetAllExchangeRates(System.Nullable{System.DateTime})">
             <summary>
             Retrieves the latest exchange rates from fixer.io.
             </summary>
@@ -12,6 +12,7 @@
         <member name="M:_2a.Controllers.CurrencyConverterController.ConvertCurrency(_2a.Models.ConversionRequest)">
             <summary>
             Converts an amount from one currency to another using current or historical exchange rates.
+            2a
             </summary>
         </member>
     </members>

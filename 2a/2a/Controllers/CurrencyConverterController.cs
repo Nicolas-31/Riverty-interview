@@ -9,7 +9,7 @@ namespace _2a.Controllers
     public class CurrencyConverterController : ControllerBase
     {
         private readonly HttpClient _httpClient;
-        private const string ApiKey = "Your Api Key";
+        private const string ApiKey = "Your API key";
         public CurrencyConverterController(HttpClient httpClient)
         {
             _httpClient = httpClient;
@@ -17,14 +17,25 @@ namespace _2a.Controllers
 
         /// <summary>
         /// Retrieves the latest exchange rates from fixer.io.
+        /// gives the date in format yyyy-MM-dd (optional)
         /// </summary>
 
         [HttpGet()]
-        public async Task<ActionResult> GetAllExchangeRates()
+        public async Task<ActionResult> GetAllExchangeRates(DateTime? date = null)
         {
             try
             {
-                string url = $"http://data.fixer.io/api/latest?access_key={ApiKey}";
+                string url;
+                if (date.HasValue)
+                {
+                    // Historical rates endpoint
+                    url = $"http://data.fixer.io/api/{date:yyyy-MM-dd}?access_key={ApiKey}";
+                }
+                else
+                {
+                    // Latest rates endpoint
+                    url = $"http://data.fixer.io/api/latest?access_key={ApiKey}";
+                }
                 HttpResponseMessage response = await _httpClient.GetAsync(url);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
@@ -45,6 +56,7 @@ namespace _2a.Controllers
 
         /// <summary>
         /// Converts an amount from one currency to another using current or historical exchange rates.
+        /// 2a
         /// </summary>
         [HttpPost("convert")]
         public async Task<ActionResult<ConversionResposne>> ConvertCurrency([FromBody] ConversionRequest request)
