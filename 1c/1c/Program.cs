@@ -1,19 +1,23 @@
 ﻿using _1c.Data;
 using _1c.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using System.Net.Http;
 using System.Text.Json;
 
 namespace _1c
 {
-    internal class Program
+    public class Program
     {
         private const string ApiKey = "abd0a86748e44f2095d949529393812a";
         private static readonly HttpClient _httpClient = new HttpClient();
         static async Task Main(string[] args)
         {
             // My database set up
-            using var context = new ExchangeRateContext();
+            //using var context = new ExchangeRateContext();
+            var optionsBuilder = new DbContextOptionsBuilder<ExchangeRateContext>();
+            var connectionString = "Server=localhost;Database=ExchangeRateDb;Trusted_Connection=True;TrustServerCertificate=true;";
+            using var context = new ExchangeRateContext(optionsBuilder.Options);
 
             // Fetch the latest rates
             var latestRates = await FetchLatestRates();
