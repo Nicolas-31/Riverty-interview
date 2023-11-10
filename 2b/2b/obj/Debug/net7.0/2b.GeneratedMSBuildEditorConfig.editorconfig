@@ -16,16 +16,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\nicol\OneDrive\Desktop\Riverty interview\2b\2b
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/nicol/OneDrive/Desktop/Riverty interview/2b/2b/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Users/nicol/OneDrive/Desktop/Riverty interview/2b/2b/Views/CurrencyConverter/ConversionResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VycmVuY3lDb252ZXJ0ZXJcQ29udmVyc2lvblJlc3VsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicol/OneDrive/Desktop/Riverty interview/2b/2b/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Users/nicol/OneDrive/Desktop/Riverty interview/2b/2b/Views/CurrencyConverter/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VycmVuY3lDb252ZXJ0ZXJcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicol/OneDrive/Desktop/Riverty interview/2b/2b/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[C:/Users/nicol/OneDrive/Desktop/Riverty interview/2b/2b/Views/CurrencyConverter/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VycmVuY3lDb252ZXJ0ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nicol/OneDrive/Desktop/Riverty interview/2b/2b/Views/Shared/_ValidationScriptsPartial.cshtml]

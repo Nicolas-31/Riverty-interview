@@ -9,6 +9,9 @@ namespace _2b
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            // Register HttpClient for dependency injection
+            builder.Services.AddHttpClient();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -28,7 +31,7 @@ namespace _2b
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=CurrencyConverter}/{action=Index}/{id?}");
 
             app.Run();
         }

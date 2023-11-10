@@ -1,0 +1,31 @@
+﻿@model _2b.Models.ConversionRequest
+
+@{
+    ViewData["Title"] = "Currency Converter";
+}
+
+<h2 style="color: blue;">@ViewData["Title"]</h2>
+
+<form asp-action="ConvertCurrency" asp-controller="CurrencyConverter" method="post">
+    <div style="margin-bottom: 15px;">
+        <label for="fromCurrency" style="display: block; font-weight: bold;">From Currency:</label>
+        <input type="text" id="fromCurrency" name="FromCurrency" value="@Model.FromCurrency" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;" />
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label for="toCurrency" style="display: block; font-weight: bold;">To Currency:</label>
+        <input type="text" id="toCurrency" name="ToCurrency" value="@Model.ToCurrency" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;" />
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label for="amount" style="display: block; font-weight: bold;">Amount:</label>
+        <input type="number" id="amount" name="Amount" value="@Model.Amount" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;" />
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label for="date" style="display: block; font-weight: bold;">Date (optional):</label>
+        <input type="date" id="date" name="Date" value="@Model.Date?.ToString("yyyy-MM-dd")" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;" />
+    </div>
+
+    <button type="submit" style="background-color: green; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Convert</button>
+</form>
