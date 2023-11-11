@@ -7,6 +7,7 @@
         <member name="M:_2a.Controllers.CurrencyConverterController.GetAllExchangeRates(System.Nullable{System.DateTime})">
             <summary>
             Retrieves the latest exchange rates from fixer.io.
+            gives the date in format yyyy-MM-dd (optional)
             </summary>
         </member>
         <member name="M:_2a.Controllers.CurrencyConverterController.ConvertCurrency(_2a.Models.ConversionRequest)">

@@ -79,3 +79,5 @@ C:\Users\nicol\OneDrive\Desktop\Riverty interview\2c\2c\obj\Debug\net7.0\refint\
 C:\Users\nicol\OneDrive\Desktop\Riverty interview\2c\2c\obj\Debug\net7.0\2c.pdb
 C:\Users\nicol\OneDrive\Desktop\Riverty interview\2c\2c\obj\Debug\net7.0\2c.genruntimeconfig.cache
 C:\Users\nicol\OneDrive\Desktop\Riverty interview\2c\2c\obj\Debug\net7.0\ref\2c.dll
+C:\Users\nicol\OneDrive\Desktop\Riverty interview\2c\2c\bin\Debug\net7.0\2c.xml
+C:\Users\nicol\OneDrive\Desktop\Riverty interview\2c\2c\obj\Debug\net7.0\2c.xml

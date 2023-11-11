@@ -9,7 +9,7 @@ namespace _2a.Controllers
     public class CurrencyConverterController : ControllerBase
     {
         private readonly HttpClient _httpClient;
-        private const string ApiKey = "Your API key";
+        private const string ApiKey = "abd0a86748e44f2095d949529393812a";
         public CurrencyConverterController(HttpClient httpClient)
         {
             _httpClient = httpClient;

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>2c</name>
+    </assembly>
+    <members>
+        <member name="M:_2c.Controllers.CurrencyConverterController.GetRatesForPeriod(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Get the exchange rate for a given currency code and period
+            both startDate and endDate must be provided in YYYY-MM-DD format
+            </summary>
+            <param name="currencyCode"></param>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

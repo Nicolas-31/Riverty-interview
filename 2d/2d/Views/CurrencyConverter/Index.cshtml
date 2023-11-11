@@ -1,0 +1,47 @@
+﻿@model _2d.Models.ExchangeRateViewModel
+
+@{
+    ViewData["Title"] = "Exchange Rate Chart";
+}
+
+<h2>Exchange Rate Chart</h2>
+<form asp-controller="CurrencyConverter" asp-action="IndexWithParameters" method="get">
+    <div>
+        <label for="currencyCode">Currency Code:</label>
+        <input type="text" id="currencyCode" name="currencyCode" required />
+    </div>
+    <div>
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" required />
+    </div>
+    <div>
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" required />
+    </div>
+    <button type="submit">Show Rates</button>
+</form>
+
+@if (Model.ExchangeRates != null && Model.ExchangeRates.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var rate in Model.ExchangeRates)
+            {
+                <tr>
+                    <td>@rate.Date.ToString("MM/dd/yyyy")</td>
+                    <td>@rate.Rate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No exchange rate data is available to display.</p>
+}
