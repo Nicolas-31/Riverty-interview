@@ -44,6 +44,28 @@
             }
         </tbody>
     </table>
+    <div style="width: 100%; margin-top: 20px;">
+        <canvas id="exchangeRateChart" width="400" height="200"></canvas>
+    </div>
+    <script>
+        var ctx = document.getElementById('exchangeRateChart').getContext('2d');
+        var toCurrency = @Html.Raw(Json.Serialize(Model.ExchangeRates.FirstOrDefault()?.ToCurrency));
+        var chart = new Chart(ctx, {
+            type: 'line', // or 'bar' for a histogram
+            data: {
+                labels: @Html.Raw(Json.Serialize(Model.ExchangeRates.Select(rate => rate.Date.ToString("MM/dd/yyyy")))),
+                datasets: [{
+                    label: 'Exchange Rate to ' + toCurrency, // Use the ToCurrency in the label
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: @Html.Raw(Json.Serialize(Model.ExchangeRates.Select(rate => rate.Rate)))
+                    }]
+            },
+            options: {}
+        });
+    </script>
+
+
 }
 else
 {
