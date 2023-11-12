@@ -36,7 +36,9 @@ namespace _2d.Controllers
                 .Select(rate => new ExchangeRateData
                 {
                     Date = rate.Date.Value.Date, // Use the Date part only for comparison
-                    Rate = rate.Rate
+                    Rate = rate.Rate,
+                    FromCurrency = rate.FromCurrency,
+                    ToCurrency = rate.ToCurrency
                 })
                 .ToListAsync();
 

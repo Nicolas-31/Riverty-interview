@@ -4,38 +4,42 @@
     ViewData["Title"] = "Exchange Rate Chart";
 }
 
-<h2>Exchange Rate Chart</h2>
-<form asp-controller="CurrencyConverter" asp-action="IndexWithParameters" method="get">
-    <div>
+<h2 style="color: navy; text-align: center;">Exchange Rate Chart</h2>
+<form asp-controller="CurrencyConverter" asp-action="IndexWithParameters" method="get" style="background-color: #f2f2f2; padding: 20px; border-radius: 5px; margin-bottom: 20px;">
+    <div style="margin-bottom: 10px;">
         <label for="currencyCode">Currency Code:</label>
-        <input type="text" id="currencyCode" name="currencyCode" required />
+        <input type="text" id="currencyCode" name="currencyCode" required style="margin-left: 10px; padding: 5px; border-radius: 3px; border: 1px solid #ccc;"/>
     </div>
-    <div>
+    <div style="margin-bottom: 10px;">
         <label for="startDate">Start Date:</label>
-        <input type="date" id="startDate" name="startDate" required />
+        <input type="date" id="startDate" name="startDate" required style="margin-left: 10px; padding: 5px; border-radius: 3px; border: 1px solid #ccc;"/>
     </div>
-    <div>
+    <div style="margin-bottom: 20px;">
         <label for="endDate">End Date:</label>
-        <input type="date" id="endDate" name="endDate" required />
+        <input type="date" id="endDate" name="endDate" required style="margin-left: 10px; padding: 5px; border-radius: 3px; border: 1px solid #ccc;"/>
     </div>
-    <button type="submit">Show Rates</button>
+    <button type="submit" style="background-color: navy; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">Show Rates</button>
 </form>
 
 @if (Model.ExchangeRates != null && Model.ExchangeRates.Any())
 {
-    <table class="table">
+    <table class="table" style="width: 100%; border-collapse: collapse;">
         <thead>
-            <tr>
-                <th>Date</th>
-                <th>Rate</th>
+            <tr style="background-color: #4CAF50; color: white;">
+                <th style="padding: 10px; border: 1px solid #ddd;">From Currency</th>
+                <th style="padding: 10px; border: 1px solid #ddd;">To Currency</th>
+                <th style="padding: 10px; border: 1px solid #ddd;">Rate</th>
+                <th style="padding: 10px; border: 1px solid #ddd;">Date</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var rate in Model.ExchangeRates)
             {
                 <tr>
-                    <td>@rate.Date.ToString("MM/dd/yyyy")</td>
-                    <td>@rate.Rate</td>
+                    <td style="padding: 8px; border: 1px solid #ddd;">@rate.FromCurrency</td>
+                    <td style="padding: 8px; border: 1px solid #ddd;">@rate.ToCurrency</td>
+                    <td style="padding: 8px; border: 1px solid #ddd;">@rate.Rate</td>
+                    <td style="padding: 8px; border: 1px solid #ddd;">@rate.Date.ToString("MM/dd/yyyy")</td>
                 </tr>
             }
         </tbody>
@@ -43,5 +47,5 @@
 }
 else
 {
-    <p>No exchange rate data is available to display.</p>
+    <p style="color: red;">No exchange rate data is available to display.</p>
 }
