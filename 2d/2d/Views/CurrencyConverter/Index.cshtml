@@ -49,21 +49,48 @@
     </div>
     <script>
         var ctx = document.getElementById('exchangeRateChart').getContext('2d');
+        var fromCurrency = @Html.Raw(Json.Serialize(Model.ExchangeRates.FirstOrDefault()?.FromCurrency));
         var toCurrency = @Html.Raw(Json.Serialize(Model.ExchangeRates.FirstOrDefault()?.ToCurrency));
         var chart = new Chart(ctx, {
-            type: 'line', // or 'bar' for a histogram
+            type: 'line',
             data: {
                 labels: @Html.Raw(Json.Serialize(Model.ExchangeRates.Select(rate => rate.Date.ToString("MM/dd/yyyy")))),
                 datasets: [{
-                    label: 'Exchange Rate to ' + toCurrency, // Use the ToCurrency in the label
+                    label: 'Exchange Rate',
                     backgroundColor: 'rgb(255, 99, 132)',
                     borderColor: 'rgb(255, 99, 132)',
+                    fill: false,
                     data: @Html.Raw(Json.Serialize(Model.ExchangeRates.Select(rate => rate.Rate)))
                     }]
             },
-            options: {}
+            options: {
+                scales: {
+                    y: { 
+                        title: {
+                            display: true,
+                            text: 'Exchange Rate'
+                        }
+                    },
+                    x: { 
+                        title: {
+                            display: true,
+                            text: 'Date'
+                        }
+                    }
+                },
+                plugins: {
+                    title: { 
+                        display: true,
+                        text: 'Exchange Rate from ' + fromCurrency + ' to ' + toCurrency
+                    },
+                    legend: {
+                        display: true, 
+                    }
+                }
+            }
         });
     </script>
+
 
 
 }
